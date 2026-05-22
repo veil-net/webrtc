@@ -376,6 +376,9 @@ func (g *ICEGatherer) renominationOptions() []ice.AgentOption {
 		opts = append(opts, ice.WithAutomaticRenomination(interval))
 	}
 
+	// Add continual gathering option
+	opts = append(opts, ice.WithContinualGatheringPolicy(ice.GatherContinually))
+
 	return opts
 }
 
